@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>山·诗 | Mountain Verses</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body id="index-page" class="lang-zh">
+<div class="lang-toggle">
+  <button class="lang-btn active" onclick="setLang('zh')">中文</button>
+  <button class="lang-btn" onclick="setLang('en')">English</button>
+</div>
+<header>
+  <p class="header-eyebrow">Ten Classical Chinese Poems · 十首山水古诗</p>
+  <h1 class="header-title-zh">山·詩</h1>
+  <p class="header-title-en">Mountain Verses</p>
+  <div class="header-divider"><span>◆</span></div>
+  <p class="header-sub zh-only">扫描二维码，探寻山水诗意<br>每首诗皆附中英对照及写作背景</p>
+  <p class="header-sub en-only">Scan a QR code to explore each poem<br>with original text, English translation &amp; literary context</p>
+</header>
+<section class="grid-section">
+  <div class="grid" id="grid"></div>
+</section>
+<footer>
+  <span class="zh-only">山不在高，有仙则名 &nbsp;·&nbsp; 水不在深，有龙则灵</span>
+  <span class="en-only">A mountain need not be high — only sacred. A river need not be deep — only alive.</span>
+</footer>
+<script src="assets/js/main.js"></script>
+<script>const POEMS=[
+  {id:1,title:"望岳",titleEn:"Gazing at Mount Tai",author:"杜甫",authorEn:"Du Fu",dynasty:"唐",dynastyEn:"Tang",preview:"会当凌绝顶，一览众山小",previewEn:"One day I'll reach the summit's height, and see all other peaks grow slight."},
+  {id:2,title:"题西林壁",titleEn:"Inscribed on West Forest Temple Wall",author:"苏轼",authorEn:"Su Shi",dynasty:"宋",dynastyEn:"Song",preview:"不识庐山真面目，只缘身在此山中",previewEn:"Why can't I see Mount Lu's true face? Because I stand within its embrace."},
+  {id:3,title:"山居秋暝",titleEn:"Autumn Evening in the Mountain Dwelling",author:"王维",authorEn:"Wang Wei",dynasty:"唐",dynastyEn:"Tang",preview:"明月松间照，清泉石上流",previewEn:"The bright moon shines through pines; clear springs flow over stones."},
+  {id:4,title:"登高",titleEn:"Ascending the Heights",author:"杜甫",authorEn:"Du Fu",dynasty:"唐",dynastyEn:"Tang",preview:"无边落木萧萧下，不尽长江滚滚来",previewEn:"Endless leaves fall with a rustling sound; the endless Yangtze keeps rolling around."},
+  {id:5,title:"独坐敬亭山",titleEn:"Sitting Alone on Mount Jingting",author:"李白",authorEn:"Li Bai",dynasty:"唐",dynastyEn:"Tang",preview:"相看两不厌，只有敬亭山",previewEn:"We gaze at each other and never tire — only Mount Jingting, only I."},
+  {id:6,title:"终南山",titleEn:"The Zhongnan Mountains",author:"王维",authorEn:"Wang Wei",dynasty:"唐",dynastyEn:"Tang",preview:"白云回望合，青霭入看无",previewEn:"White clouds close behind as I turn; blue mist vanishes as I walk in."},
+  {id:7,title:"登鹳雀楼",titleEn:"Ascending the Stork Tower",author:"王之涣",authorEn:"Wang Zhihuan",dynasty:"唐",dynastyEn:"Tang",preview:"欲穷千里目，更上一层楼",previewEn:"To see a thousand miles afar, climb yet one more floor."},
+  {id:8,title:"早发白帝城",titleEn:"Departing White Emperor City at Dawn",author:"李白",authorEn:"Li Bai",dynasty:"唐",dynastyEn:"Tang",preview:"两岸猿声啼不住，轻舟已过万重山",previewEn:"Apes on both banks cry without cease; my light boat has passed ten thousand peaks."},
+  {id:9,title:"江雪",titleEn:"River Snow",author:"柳宗元",authorEn:"Liu Zongyuan",dynasty:"唐",dynastyEn:"Tang",preview:"孤舟蓑笠翁，独钓寒江雪",previewEn:"A lone boat, a cloaked old man, fishing alone in the cold river snow."},
+  {id:10,title:"行路难·其一",titleEn:"Hard Is the Road · I",author:"李白",authorEn:"Li Bai",dynasty:"唐",dynastyEn:"Tang",preview:"长风破浪会有时，直挂云帆济沧海",previewEn:"The day will come when wind breaks waves apart; I'll set cloud-sails and cross the boundless sea."}
+];
+
+
+
+const grid=document.getElementById('grid');
+POEMS.forEach((p,idx)=>{
+  const url=`poems/poem-${p.id}.html`;
+  const card=document.createElement('div');
+  card.className='card';
+  card.innerHTML=`
+    <div class="card-number">No.${String(p.id).padStart(2,'0')} · ${p.dynasty}代</div>
+    <div class="card-title-zh zh-only">${p.title}</div>
+    <div class="card-title-en">${p.titleEn}</div>
+    <div class="card-author zh-only">${p.author} · ${p.dynasty}代</div>
+    <div class="card-author en-only">${p.authorEn} · ${p.dynastyEn} Dynasty</div>
+    <div class="qr-container" id="qr-${p.id}"></div>
+    <div class="card-preview">
+      <div class="zh zh-only">${p.preview}</div>
+      <div class="en">${p.previewEn}</div>
+    </div>`;
+  card.onclick=()=>window.location.href=url;
+  grid.appendChild(card);
+  setTimeout(()=>{
+    new QRCode(document.getElementById(`qr-${p.id}`),{
+      text: window.location.href.split('index.html')[0].replace(/\/?$/, '/') + url,
+      width:120,height:120,colorDark:'#1a1714',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M});
+  },idx*40);
+});
+</script>
+</body>
+</html>

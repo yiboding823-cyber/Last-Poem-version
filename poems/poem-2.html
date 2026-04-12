@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>题西林壁 · 苏轼 | 山·诗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body id="poem-page" class="lang-zh">
+<svg class="mountain-bg" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0,400 L0,300 Q80,180 180,260 Q260,320 340,220 Q440,100 540,180 Q620,240 700,130 Q800,10 900,120 Q980,200 1060,110 Q1160,-10 1260,130 Q1340,220 1440,180 L1440,400 Z" fill="#e8e1d5" opacity="0.5"/>
+<path d="M0,400 L0,330 Q100,250 200,300 Q300,340 400,270 Q500,190 600,260 Q680,310 760,240 Q860,160 960,250 Q1040,310 1120,260 Q1220,200 1320,280 Q1390,330 1440,300 L1440,400 Z" fill="#d8d0c4" opacity="0.4"/>
+</svg>
+<nav>
+  <a href="../index.html" class="nav-back"><span class="zh-only">山·诗</span><span class="en-only">Mountain Verses</span></a>
+  <div class="nav-title zh-only">题西林壁</div>
+  <div class="nav-title en-only" style="font-family:var(--serif);font-style:italic;font-size:13px">Inscribed on West Forest Temple Wall</div>
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('zh')">中文</button>
+    <button class="lang-btn" onclick="setLang('en')">English</button>
+  </div>
+</nav>
+<main>
+  <header class="poem-header">
+    <p class="poem-number">No. 02 · 宋代 · Song Dynasty</p>
+    <h1 class="poem-title-zh zh-only">题西林壁</h1>
+    <h1 class="poem-title-en">Inscribed on West Forest Temple Wall</h1>
+    <div class="poem-author-row">
+      <span class="zh-only">苏轼</span><span class="en-only">Su Shi</span>
+      <span>·</span>
+      <span class="zh-only">宋代</span><span class="en-only">Song Dynasty</span>
+    </div>
+    <div class="header-ornament"><i></i></div>
+  </header>
+  <div class="tabs-container">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab(0)"><span class="zh-only">原文</span><span class="en-only">Original</span></button>
+    <button class="tab-btn" onclick="switchTab(1)"><span class="zh-only">英译</span><span class="en-only">Translation</span></button>
+    <button class="tab-btn" onclick="switchTab(2)"><span class="zh-only">背景</span><span class="en-only">Context</span></button>
+  </div>
+  </div>
+  <div class="audio-controls" style="display:flex;justify-content:center;">
+    <button class="play-btn" onclick="playPoem()">
+      <span class="zh-only">▶ 朗读本诗</span><span class="en-only">▶ Read Aloud</span>
+    </button>
+  </div>
+  <div class="panel active" id="panel-0">
+    <div class="poem-body"><div class="poem-couplet"><div class="poem-line">横看成岭侧成峰，</div><div class="poem-line">远近高低各不同。</div></div><div class="poem-couplet"><div class="poem-line">不识庐山真面目，</div><div class="poem-line">只缘身在此山中。</div></div></div>
+  </div>
+  <div class="panel" id="panel-1">
+    <div class="translation-body"><div class="en-couplet"><div class="en-line">Seen head-on a ridge; from the side a peak;</div><div class="en-line">Far and near, high and low — each view unique.</div></div><div class="en-couplet"><div class="en-line">Why can't I see Mount Lu's true face?</div><div class="en-line">Because I dwell within its embrace.</div></div></div>
+  </div>
+  <div class="panel" id="panel-2">
+    <div class="bg-sections">
+      <div class="bg-block">
+        <div class="bg-label"><span class="bg-label-zh">作者简介</span><span class="bg-label-en">About the Poet</span></div>
+        <p class="bg-text zh zh-only">苏轼（1037–1101），号东坡居士，北宋文豪，诗词书画无所不精。</p>
+        <p class="bg-text en">Su Shi (1037–1101), known as Su Dongpo, was a supreme polymath of the Song dynasty — master of poetry, prose, calligraphy, and painting.</p>
+      </div>
+      <div class="bg-block">
+        <div class="bg-label"><span class="bg-label-zh">创作背景</span><span class="bg-label-en">Historical Context</span></div>
+        <p class="bg-text zh zh-only">宋神宗元丰七年，苏轼由黄州赴汝州途中，游庐山，题于西林寺壁。山形变幻启发哲思，借景论道。</p>
+        <p class="bg-text en">In 1084, while traveling from Huangzhou to Ruzhou, Su Shi visited Mount Lu and inscribed this poem on the wall of West Forest Temple. The ever-shifting silhouette of the mountain sparked a philosophical insight.</p>
+      </div>
+      <div class="bg-block">
+        <div class="bg-label"><span class="bg-label-zh">艺术特色</span><span class="bg-label-en">Literary Style</span></div>
+        <p class="bg-text zh zh-only">前两句写庐山形态万变，后两句由景入理，揭示旁观者清的人生哲理，是中国哲理诗的经典代表。</p>
+        <p class="bg-text en">The first two lines describe the mountain's myriad appearances; the last two pivot from scenery to wisdom. The poem is a cornerstone of Chinese philosophical verse, illustrating how our perspective shapes — and limits — our understanding of reality.</p>
+      </div>
+    </div>
+  </div>
+  <nav class="poem-nav">
+    <a class="poem-nav-link prev" href="poem-1.html">
+      <span class="nav-direction zh-only">← 上一首</span><span class="nav-direction en-only">← Previous</span>
+      <span class="nav-poem-title zh-only">望岳</span><span class="nav-poem-title en-only" style="font-family:var(--serif);font-style:italic;font-size:13px">Gazing at Mount Tai</span>
+    </a>
+    <div class="poem-nav-center">2 / 10</div>
+    <a class="poem-nav-link next" href="poem-3.html">
+      <span class="nav-direction zh-only">下一首 →</span><span class="nav-direction en-only">Next →</span>
+      <span class="nav-poem-title zh-only">山居秋暝</span><span class="nav-poem-title en-only" style="font-family:var(--serif);font-style:italic;font-size:13px">Autumn Evening in the Mountain Dwelling</span>
+    </a>
+  </nav>
+</main>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

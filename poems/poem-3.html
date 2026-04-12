@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>山居秋暝 · 王维 | 山·诗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body id="poem-page" class="lang-zh">
+<svg class="mountain-bg" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0,400 L0,300 Q80,180 180,260 Q260,320 340,220 Q440,100 540,180 Q620,240 700,130 Q800,10 900,120 Q980,200 1060,110 Q1160,-10 1260,130 Q1340,220 1440,180 L1440,400 Z" fill="#e8e1d5" opacity="0.5"/>
+<path d="M0,400 L0,330 Q100,250 200,300 Q300,340 400,270 Q500,190 600,260 Q680,310 760,240 Q860,160 960,250 Q1040,310 1120,260 Q1220,200 1320,280 Q1390,330 1440,300 L1440,400 Z" fill="#d8d0c4" opacity="0.4"/>
+</svg>
+<nav>
+  <a href="../index.html" class="nav-back"><span class="zh-only">山·诗</span><span class="en-only">Mountain Verses</span></a>
+  <div class="nav-title zh-only">山居秋暝</div>
+  <div class="nav-title en-only" style="font-family:var(--serif);font-style:italic;font-size:13px">Autumn Evening in the Mountain Dwelling</div>
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('zh')">中文</button>
+    <button class="lang-btn" onclick="setLang('en')">English</button>
+  </div>
+</nav>
+<main>
+  <header class="poem-header">
+    <p class="poem-number">No. 03 · 唐代 · Tang Dynasty</p>
+    <h1 class="poem-title-zh zh-only">山居秋暝</h1>
+    <h1 class="poem-title-en">Autumn Evening in the Mountain Dwelling</h1>
+    <div class="poem-author-row">
+      <span class="zh-only">王维</span><span class="en-only">Wang Wei</span>
+      <span>·</span>
+      <span class="zh-only">唐代</span><span class="en-only">Tang Dynasty</span>
+    </div>
+    <div class="header-ornament"><i></i></div>
+  </header>
+  <div class="tabs-container">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab(0)"><span class="zh-only">原文</span><span class="en-only">Original</span></button>
+    <button class="tab-btn" onclick="switchTab(1)"><span class="zh-only">英译</span><span class="en-only">Translation</span></button>
+    <button class="tab-btn" onclick="switchTab(2)"><span class="zh-only">背景</span><span class="en-only">Context</span></button>
+  </div>
+  </div>
+  <div class="audio-controls" style="display:flex;justify-content:center;">
+    <button class="play-btn" onclick="playPoem()">
+      <span class="zh-only">▶ 朗读本诗</span><span class="en-only">▶ Read Aloud</span>
+    </button>
+  </div>
+  <div class="panel active" id="panel-0">
+    <div class="poem-body"><div class="poem-couplet"><div class="poem-line">空山新雨后，</div><div class="poem-line">天气晚来秋。</div></div><div class="poem-couplet"><div class="poem-line">明月松间照，</div><div class="poem-line">清泉石上流。</div></div><div class="poem-couplet"><div class="poem-line">竹喧归浣女，</div><div class="poem-line">莲动下渔舟。</div></div><div class="poem-couplet"><div class="poem-line">随意春芳歇，</div><div class="poem-line">王孙自可留。</div></div></div>
+  </div>
+  <div class="panel" id="panel-1">
+    <div class="translation-body"><div class="en-couplet"><div class="en-line">Fresh rain has washed the empty hills;</div><div class="en-line">Autumn dusk fills the air it stills.</div></div><div class="en-couplet"><div class="en-line">The bright moon gleams through pines above;</div><div class="en-line">Clear springs flow over stones with love.</div></div><div class="en-couplet"><div class="en-line">Bamboo rustles — washerwomen home;</div><div class="en-line">Lotus stirs — fishermen's boats roam.</div></div><div class="en-couplet"><div class="en-line">Let spring's flowers fade away;</div><div class="en-line">A noble soul may choose to stay.</div></div></div>
+  </div>
+  <div class="panel" id="panel-2">
+    <div class="bg-sections">
+      <div class="bg-block">
+        <div class="bg-label"><span class="bg-label-zh">作者简介</span><span class="bg-label-en">About the Poet</span></div>
+        <p class="bg-text zh zh-only">王维（701–761），字摩诘，世称诗佛，苏轼评其「诗中有画，画中有诗」。</p>
+        <p class="bg-text en">Wang Wei (701–761), styled Mojie, was called the Buddha of Poetry. Su Shi praised him: 'In his poems there is painting; in his paintings there is poetry.'</p>
+      </div>
+      <div class="bg-block">
+        <div class="bg-label"><span class="bg-label-zh">创作背景</span><span class="bg-label-en">Historical Context</span></div>
+        <p class="bg-text zh zh-only">王维晚年隐居蓝田辋川，此诗描绘山中秋暮雨后景象，借景抒怀，表达对田园隐逸生活的热爱与向往。</p>
+        <p class="bg-text en">In his later years, Wang Wei retired to his Wangchuan estate in Lantian. This poem captures the mountain after an autumn evening rain, expressing his deep love for the reclusive life amid nature.</p>
+      </div>
+      <div class="bg-block">
+        <div class="bg-label"><span class="bg-label-zh">艺术特色</span><span class="bg-label-en">Literary Style</span></div>
+        <p class="bg-text zh zh-only">颔联「明月松间照，清泉石上流」是中国山水诗中最完美的意象对仗之一，声色俱全，动静相宜，被誉为诗中画卷。</p>
+        <p class="bg-text en">The couplet 'bright moon through pines / clear springs over stones' is among the most celebrated paired images in Chinese landscape poetry — balancing light and sound, stillness and motion in perfect harmony.</p>
+      </div>
+    </div>
+  </div>
+  <nav class="poem-nav">
+    <a class="poem-nav-link prev" href="poem-2.html">
+      <span class="nav-direction zh-only">← 上一首</span><span class="nav-direction en-only">← Previous</span>
+      <span class="nav-poem-title zh-only">题西林壁</span><span class="nav-poem-title en-only" style="font-family:var(--serif);font-style:italic;font-size:13px">Inscribed on West Forest Temple Wall</span>
+    </a>
+    <div class="poem-nav-center">3 / 10</div>
+    <a class="poem-nav-link next" href="poem-4.html">
+      <span class="nav-direction zh-only">下一首 →</span><span class="nav-direction en-only">Next →</span>
+      <span class="nav-poem-title zh-only">登高</span><span class="nav-poem-title en-only" style="font-family:var(--serif);font-style:italic;font-size:13px">Ascending the Heights</span>
+    </a>
+  </nav>
+</main>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

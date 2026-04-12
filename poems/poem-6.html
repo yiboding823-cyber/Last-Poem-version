@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>终南山 · 王维 | 山·诗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body id="poem-page" class="lang-zh">
+<svg class="mountain-bg" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0,400 L0,300 Q80,180 180,260 Q260,320 340,220 Q440,100 540,180 Q620,240 700,130 Q800,10 900,120 Q980,200 1060,110 Q1160,-10 1260,130 Q1340,220 1440,180 L1440,400 Z" fill="#e8e1d5" opacity="0.5"/>
+<path d="M0,400 L0,330 Q100,250 200,300 Q300,340 400,270 Q500,190 600,260 Q680,310 760,240 Q860,160 960,250 Q1040,310 1120,260 Q1220,200 1320,280 Q1390,330 1440,300 L1440,400 Z" fill="#d8d0c4" opacity="0.4"/>
+</svg>
+<nav>
+  <a href="../index.html" class="nav-back"><span class="zh-only">山·诗</span><span class="en-only">Mountain Verses</span></a>
+  <div class="nav-title zh-only">终南山</div>
+  <div class="nav-title en-only" style="font-family:var(--serif);font-style:italic;font-size:13px">The Zhongnan Mountains</div>
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('zh')">中文</button>
+    <button class="lang-btn" onclick="setLang('en')">English</button>
+  </div>
+</nav>
+<main>
+  <header class="poem-header">
+    <p class="poem-number">No. 06 · 唐代 · Tang Dynasty</p>
+    <h1 class="poem-title-zh zh-only">终南山</h1>
+    <h1 class="poem-title-en">The Zhongnan Mountains</h1>
+    <div class="poem-author-row">
+      <span class="zh-only">王维</span><span class="en-only">Wang Wei</span>
+      <span>·</span>
+      <span class="zh-only">唐代</span><span class="en-only">Tang Dynasty</span>
+    </div>
+    <div class="header-ornament"><i></i></div>
+  </header>
+  <div class="tabs-container">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab(0)"><span class="zh-only">原文</span><span class="en-only">Original</span></button>
+    <button class="tab-btn" onclick="switchTab(1)"><span class="zh-only">英译</span><span class="en-only">Translation</span></button>
+    <button class="tab-btn" onclick="switchTab(2)"><span class="zh-only">背景</span><span class="en-only">Context</span></button>
+  </div>
+  </div>
+  <div class="audio-controls" style="display:flex;justify-content:center;">
+    <button class="play-btn" onclick="playPoem()">
+      <span class="zh-only">▶ 朗读本诗</span><span class="en-only">▶ Read Aloud</span>
+    </button>
+  </div>
+  <div class="panel active" id="panel-0">
+    <div class="poem-body"><div class="poem-couplet"><div class="poem-line">太乙近天都，</div><div class="poem-line">连山接海隅。</div></div><div class="poem-couplet"><div class="poem-line">白云回望合，</div><div class="poem-line">青霭入看无。</div></div><div class="poem-couplet"><div class="poem-line">分野中峰变，</div><div class="poem-line">阴晴众壑殊。</div></div><div class="poem-couplet"><div class="poem-line">欲投人处宿，</div><div class="poem-line">隔水问樵夫。</div></div></div>
+  </div>
+  <div class="panel" id="panel-1">
+    <div class="translation-body"><div class="en-couplet"><div class="en-line">Taiyi peak nears heaven's capital town;</div><div class="en-line">Its ridges stretch to where the seas go down.</div></div><div class="en-couplet"><div class="en-line">White clouds close behind when I turn back;</div><div class="en-line">Blue mist dissolves when entered — leaves no track.</div></div><div class="en-couplet"><div class="en-line">The middle peak divides star territories;</div><div class="en-line">Each valley holds its own sun and shadow's glories.</div></div><div class="en-couplet"><div class="en-line">To find a place to rest as evening falls,</div><div class="en-line">Across the stream I ask the woodsman's calls.</div></div></div>
+  </div>
+  <div class="panel" id="panel-2">
+    <div class="bg-sections">
+      <div class="bg-block">
+        <div class="bg-label"><span class="bg-label-zh">作者简介</span><span class="bg-label-en">About the Poet</span></div>
+        <p class="bg-text zh zh-only">王维长期隐居终南山辋川，此诗以宏大视角描绘终南山的磅礴气势与神秘变幻。</p>
+        <p class="bg-text en">Wang Wei lived for many years in retreat in the Zhongnan Mountains. This poem surveys the range with sweeping grandeur and captures its mysterious, ever-changing atmosphere.</p>
+      </div>
+      <div class="bg-block">
+        <div class="bg-label"><span class="bg-label-zh">创作背景</span><span class="bg-label-en">Historical Context</span></div>
+        <p class="bg-text zh zh-only">此诗创作于王维隐居终南山时期，诗人以俯瞰之势描绘山脉全貌，由宏观到微观，由远及近，层次分明。</p>
+        <p class="bg-text en">Written during Wang Wei's reclusive years in the Zhongnan range, the poem surveys the mountains from a panoramic height and gradually descends to the intimate human detail of asking a woodcutter for shelter at dusk.</p>
+      </div>
+      <div class="bg-block">
+        <div class="bg-label"><span class="bg-label-zh">艺术特色</span><span class="bg-label-en">Literary Style</span></div>
+        <p class="bg-text zh zh-only">颔联「白云回望合，青霭入看无」以云雾的聚散描绘山中变幻，虚实相生，是山水诗中描写云雾的绝妙名句。</p>
+        <p class="bg-text en">The couplet about white clouds closing behind and blue mist disappearing within is a masterstroke of depicting mountain atmosphere — clouds both real and illusory, the landscape itself breathing and shifting around the traveler.</p>
+      </div>
+    </div>
+  </div>
+  <nav class="poem-nav">
+    <a class="poem-nav-link prev" href="poem-5.html">
+      <span class="nav-direction zh-only">← 上一首</span><span class="nav-direction en-only">← Previous</span>
+      <span class="nav-poem-title zh-only">独坐敬亭山</span><span class="nav-poem-title en-only" style="font-family:var(--serif);font-style:italic;font-size:13px">Sitting Alone on Mount Jingting</span>
+    </a>
+    <div class="poem-nav-center">6 / 10</div>
+    <a class="poem-nav-link next" href="poem-7.html">
+      <span class="nav-direction zh-only">下一首 →</span><span class="nav-direction en-only">Next →</span>
+      <span class="nav-poem-title zh-only">登鹳雀楼</span><span class="nav-poem-title en-only" style="font-family:var(--serif);font-style:italic;font-size:13px">Ascending the Stork Tower</span>
+    </a>
+  </nav>
+</main>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
