@@ -41,9 +41,12 @@
     <button class="tab-btn" onclick="switchTab(2)"><span class="zh-only">背景</span><span class="en-only">Context</span></button>
   </div>
   </div>
-  <div class="audio-controls" style="display:flex;justify-content:center;">
+  <div class="audio-controls" style="display:flex;justify-content:center;gap:15px;">
     <button class="play-btn" onclick="playPoem()">
       <span class="zh-only">▶ 朗读本诗</span><span class="en-only">▶ Read Aloud</span>
+    </button>
+    <button class="play-btn" onclick="generatePosterModal()">
+      <span class="zh-only">🖼️ 生成海报</span><span class="en-only">🖼️ Poster</span>
     </button>
   </div>
   <div class="panel active" id="panel-0">
@@ -84,5 +87,17 @@
   </nav>
 </main>
 <script src="../assets/js/main.js"></script>
+
+<div id="poster-modal" class="poster-modal">
+  <div class="poster-modal-content">
+    <div class="poster-modal-close" onclick="closePosterModal()">×</div>
+    <div id="poster-render-area" class="poster-render-area"></div>
+    <button class="play-btn save-poster-btn" onclick="downloadPoster()" style="margin:20px auto 10px; display:flex;">
+      <span class="zh-only">💾 保存海报到本地</span><span class="en-only">💾 Save to Device</span>
+    </button>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
 </body>
 </html>

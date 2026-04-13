@@ -77,3 +77,49 @@ function playPoem() {
 }
 
 document.addEventListener('DOMContentLoaded', initLang);
+
+// --- Poster Share Functionality ---
+
+function generatePosterModal() {
+  const modal = document.getElementById('poster-modal');
+  const renderArea = document.getElementById('poster-render-area');
+  
+  const match = window.location.pathname.match(/poem-(\d+)\.html/);
+  if (!match) return;
+  const poemId = match[1];
+  
+  // Set the AI generated background image
+  renderArea.style.backgroundImage = `url('../assets/images/posters/poem-${poemId}-bg.png')`;
+  renderArea.innerHTML = ''; // Request: Keep it empty, just show the picture
+  
+  modal.classList.add('active');
+}
+
+function closePosterModal() {
+  document.getElementById('poster-modal').classList.remove('active');
+}
+
+function downloadPoster() {
+  const area = document.getElementById('poster-render-area');
+  const btn = document.querySelector('.save-poster-btn');
+  const isZh = document.body.classList.contains('lang-zh');
+  
+  const originalHtml = btn.innerHTML;
+  btn.innerHTML = isZh ? '<span class="zh-only">⏳ 生成中...</span><span class="en-only">⏳ Generating...</span>' : '<span class="zh-only">⏳ Generating...</span><span class="en-only">⏳ Generating...</span>';
+  
+  html2canvas(area, { 
+    scale: 3, // High-res poster
+    useCORS: true,
+    backgroundColor: null,
+  }).then(canvas => {
+    const link = document.createElement('a');
+    link.download = `Mountain-Verses-Poster-${Date.now()}.png`;
+    link.href = canvas.toDataURL('image/png', 0.95);
+    link.click();
+    btn.innerHTML = originalHtml;
+  }).catch(e => {
+    console.error("Poster generation failed:", e);
+    btn.innerHTML = isZh ? '<span class="zh-only">❌ 失败</span><span class="en-only">❌ Failed</span>' : '❌ Failed';
+    setTimeout(() => { btn.innerHTML = originalHtml; }, 2000);
+  });
+}
